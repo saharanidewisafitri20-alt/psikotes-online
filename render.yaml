@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: psikotes-online-python
+    runtime: python
+    plan: free
+    buildCommand: python3 generate_data.py
+    startCommand: python3 app.py --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PSIKOTES_ADMIN_PIN
+        sync: false
+
